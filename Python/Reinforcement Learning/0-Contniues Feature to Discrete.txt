@@ -21,3 +21,6 @@ class StateTransformer:
                              self.to_bin(cart_vel, self.Cart_Position_bins),
                              self.to_bin(pole_angle, self.Cart_Position_bins),
                              self.to_bin(pole_vel, self.Cart_Position_bins)])
+                             
+                             
+                             
