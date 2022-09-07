@@ -1,0 +1,23 @@
+# StateTransformer transfer continues feature intervals to discrete interval by To_Bin methode and linspace
+
+class StateTransformer:
+  def __init__(self):
+    self.Cart_Position_bins = np.linspace(-2.4, 2.4, 9)
+    self.Cart_velocity_bins = np.linspace(-2, 2, 9)
+    self.Pole_angle_bins = np.linspace(-0.4, 0.4, 9)
+    self.pole_velocity_bins = np.linspace(-3.5, 3.5, 9)
+
+ 
+  def to_bin(self,obs , bins):
+    return np.digitize(obs,bins)
+
+  def createstate(self, state):
+    return int("".join(map(lambda value: str(int(value)),state)))
+
+
+  def transformer(self, observation):
+    cart_pos, cart_vel, pole_angle, pole_vel = observation 
+    return self.createstate([self.to_bin(cart_pos, self.Cart_Position_bins),
+                             self.to_bin(cart_vel, self.Cart_Position_bins),
+                             self.to_bin(pole_angle, self.Cart_Position_bins),
+                             self.to_bin(pole_vel, self.Cart_Position_bins)])
