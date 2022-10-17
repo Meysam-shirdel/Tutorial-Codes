@@ -1,1 +1,1 @@
-Here you can see some clustering algorithms.
+Here you can find a clustering algorithm code.
